@@ -502,16 +502,7 @@ namespace spacex_explore.ViewModels
             var stars = JsonConvert.DeserializeObject<ObservableCollection<StarlinkResponse>>(starResponse);
             var favstarts = new List<StarlinkResponse>();
 
-            //foreach (var _fav in MyFavList)
-            //{
-            //    if (crews.FirstOrDefault(x => x.id == _fav.postId) != null)
-            //    {
-            //        var crew = crews.FirstOrDefault(x => x.id == _fav.postId);
-            //        crew.isFav = true;
 
-            //        favcrew.Add(crew);
-            //    }
-            //}
 
             StartLinks = new ObservableCollection<StarlinkResponse>(stars);
             FavStartLinks = new ObservableCollection<StarlinkResponse>(favstarts);
