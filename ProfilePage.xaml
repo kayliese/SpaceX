@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:icons="clr-namespace:spacex_explore.Helpers;assembly=spacex_explore"
+    xmlns:vm="clr-namespace:spacex_explore.ViewModels"
+    BackgroundColor="{StaticResource PageBackgroundColor}"
+    Visual="Material"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+ios:Page.UseSafeArea="true"
+    NavigationPage.HasNavigationBar="False"
+    x:Class="spacex_explore.Views.ProfilePage">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <ScrollView>
+            <Grid RowDefinitions="auto,auto,auto,auto,auto,*,auto" Padding="20">
+                <StackLayout Grid.Row="0" Spacing="0">
+                    <Label Text="Profile" FontSize="Large"/>
+                    <Label Text="Update your profile details here" TextColor="{StaticResource SecondaryColor}" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <Entry Placeholder="Email" Text="{Binding profile.email}" IsReadOnly="True" IsEnabled="False"/>
+                    <Entry Placeholder="Full name" Text="{Binding profile.fullName}"/>
+                </StackLayout>
+                <Button Text="Submit" Grid.Row="2" Command="{Binding UpdateProfileCommand}"></Button>
+
+                <StackLayout Grid.Row="3" Margin="0,20">
+                    <Label Text="Options" FontSize="Large"/>
+                    <Button Text="Show favourites" Grid.Row="2" x:Name="showFavBtn" Clicked="showFavBtn_Clicked"></Button>
+                </StackLayout>
+
+                <Button Text="sign out" Grid.Row="6" x:Name="signOutBtn" Clicked="signOutBtn_Clicked" BackgroundColor="Maroon" TextColor="White"></Button>
+            </Grid>
+        </ScrollView>
+         <StackLayout IsVisible="{Binding IsBusy}" BackgroundColor="{StaticResource PageBackgroundColor}"  Opacity="1" Orientation="Vertical">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator Color="{StaticResource PrimaryColor}" IsRunning="true" />
+                <Label Text="{Binding BusyText}" TextColor="{StaticResource PrimaryColor}" VerticalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

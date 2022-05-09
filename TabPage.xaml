@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<TabbedPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource PageBackgroundColor}"
+    xmlns:views="clr-namespace:spacex_explore.Views"
+    NavigationPage.HasNavigationBar="False"
+    BarBackground="Black"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    android:TabbedPage.IsSwipePagingEnabled="False"
+    android:TabbedPage.BarItemColor="#C8C8C8"
+    android:TabbedPage.BarSelectedItemColor="White"
+    xmlns:icons="clr-namespace:spacex_explore.Helpers;assembly=spacex_explore"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+ios:Page.UseSafeArea="true"
+    x:Class="spacex_explore.Views.TabPage">
+    <NavigationPage Title="Home">
+        <x:Arguments>
+            <views:HomePage/>
+        </x:Arguments>
+        <NavigationPage.IconImageSource>
+            <FontImageSource Glyph="{x:Static icons:FontIcons.MdGlobe}" FontFamily="IonIcons" Color="#404040"   />
+        </NavigationPage.IconImageSource>
+    </NavigationPage>
+
+    <NavigationPage Title="Explore">
+        <x:Arguments>
+            <views:ExplorePage/>
+        </x:Arguments>
+        <NavigationPage.IconImageSource>
+            <FontImageSource Glyph="{x:Static icons:FontIcons.MdSearch}" FontFamily="IonIcons" Color="#404040"  />
+        </NavigationPage.IconImageSource>
+    </NavigationPage>
+
+    <NavigationPage Title="Launches">
+        <x:Arguments>
+            <views:LaunchesPage/>
+        </x:Arguments>
+        <NavigationPage.IconImageSource>
+            <FontImageSource Glyph="{x:Static icons:FontIcons.MdRocket}" FontFamily="IonIcons" Color="#404040"  />
+        </NavigationPage.IconImageSource>
+    </NavigationPage>
+
+    <!--<NavigationPage Title="Favorites">
+        <x:Arguments>
+            <views:FavoritesPage/>
+        </x:Arguments>
+        <NavigationPage.IconImageSource>
+            <FontImageSource Glyph="{x:Static icons:FontIcons.MdHeart}" FontFamily="IonIcons" Color="#404040"  />
+        </NavigationPage.IconImageSource>
+    </NavigationPage>-->
+
+    <NavigationPage Title="Profile">
+        <x:Arguments>
+            <views:ProfilePage/>
+        </x:Arguments>
+        <NavigationPage.IconImageSource>
+            <FontImageSource Glyph="{x:Static icons:FontIcons.MdPerson}" FontFamily="IonIcons" Color="#404040"  />
+        </NavigationPage.IconImageSource>
+    </NavigationPage>
+</TabbedPage>
