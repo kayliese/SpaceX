@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="spacex_explore.App">
+    <Application.Resources>
+
+        <Color x:Key="PageBackgroundColor">Black</Color>
+        <Color x:Key="EntryBackgroundColor">Black</Color>
+        <Color x:Key="PrimaryColor">White</Color>
+        <Color x:Key="SecondaryColor">LightGray</Color>
+        <Color x:Key="PrimaryTextColor">White</Color>
+        <Color x:Key="SecondaryTextColor">White</Color>
+
+        <Style TargetType="Button">
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="TextTransform" Value="Uppercase"/>
+            <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+        </Style>
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
+        </Style>
+
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="{DynamicResource EntryBackgroundColor}"/>
+            <Setter Property="PlaceholderColor" Value="{DynamicResource SecondaryTextColor}"/>
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+        </Style>
+
+        <Style TargetType="Editor">
+            <Setter Property="BackgroundColor" Value="{DynamicResource EntryBackgroundColor}"/>
+            <Setter Property="PlaceholderColor" Value="{DynamicResource SecondaryTextColor}"/>
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+        </Style>
+
+    </Application.Resources>
+</Application>
